@@ -992,7 +992,7 @@ public class Hero {
 		
 		//////////////////
 		// childhood
-		switch (Rand.d(7)) {
+		switch (Rand.d(8)) {
 			case 1:
 				sb.append("You had an unhappy childhood, finding it hard to relate to your peers.");
 				h.incStat("WP",Rand.d(3));
@@ -1018,6 +1018,12 @@ public class Hero {
 				h.incStat("CH",-1);
 				h.incStat("IN",-3);
 				h.incStat("ST",2);
+				break;
+			case 6:
+				sb.append("You had a fun childhood, and were constantly surronded by friends. You often neglected studies and other activities for the sake of your friends.");
+				h.incStat("CH",Rand.d(3));
+				h.incStat("IN",-2);
+				h.incStat("ST",-2);
 				break;
 			default:
 				sb.append("You had an uneventful childhood, and yearned for adventure.");
@@ -1082,7 +1088,18 @@ public class Hero {
 		// training
 		String p=h.getString("Profession");
 		sb.append("Determined to make something of your life, you began your "+p+" training as soon as you were old enough. ");
-		switch (Rand.d(5)) {
+		switch (Rand.d(4)) {
+			case 1:
+				sb.append("You praciced your chosen career day and night, isolating yourself in order to master your craft. It was not long before you were a fully trained "+p+".");
+				h.incStat("WP",3);
+				h.incStat("CH",-3);
+				break;
+			case 2:
+				sb.append("You spent many moons searching for and talking to masters of your chosen career. Eventually, you were able to piece together all of their knowlege and become a fully trained "+p+" yourself!");
+				h.incStat("CH",Rand.d(3));
+				h.incStat("IN",Rand.d(3));
+				h.incStat("WP",-1);
+				break;
 			default:
 				sb.append("You showed a good aptitude for your chosen career, and before too long your tutor proclaimed you as a fully trained "+p+".");
 				break;
